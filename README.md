@@ -2,7 +2,7 @@
   <!-- <br> -->
   <!-- [Project's Logo] -->
   <br>
-  Devenv.nix
+  Env.nix
   <br>
 </h1>
 
@@ -49,10 +49,10 @@ You can both clone this repository or just extract the raw file string and put i
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/abehidek/devenv.nix
+$ git clone https://github.com/abehidek/env.nix
 
 # Go into the repository
-$ cd devenv.nix
+$ cd env.nix
 ```
 
 ## FAQ
@@ -72,7 +72,7 @@ $ cd devenv.nix
 
 ## Emailware
 
-Devenv.nix is an [emailware](https://en.wiktionary.org/wiki/emailware). Meaning, if you liked using this app or it has helped you in any way, I'd like you send me an email at <hidek.abe@outlook.com> about anything you'd want to say about this software. I'd really appreciate it!
+Env.nix is an [emailware](https://en.wiktionary.org/wiki/emailware). Meaning, if you liked using this app or it has helped you in any way, I'd like you send me an email at <hidek.abe@outlook.com> about anything you'd want to say about this software. I'd really appreciate it!
 
 ## Contributing
 
