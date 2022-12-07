@@ -72,7 +72,7 @@ $ cd devenv.nix
 
 ## Emailware
 
-[Project's name] is an [emailware](https://en.wiktionary.org/wiki/emailware). Meaning, if you liked using this app or it has helped you in any way, I'd like you send me an email at <your-email@email.com> about anything you'd want to say about this software. I'd really appreciate it!
+Devenv.nix is an [emailware](https://en.wiktionary.org/wiki/emailware). Meaning, if you liked using this app or it has helped you in any way, I'd like you send me an email at <hidek.abe@outlook.com> about anything you'd want to say about this software. I'd really appreciate it!
 
 ## Contributing
 
