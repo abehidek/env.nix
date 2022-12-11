@@ -18,7 +18,7 @@
           node16Pkgs.nodejs
           node16Pkgs.nodePackages.prisma
           node16Pkgs.yarn
-          # node16Pkgs.pnpm
+          # node16Pkgs.nodePackages.pnpm
           pkgs.nodePackages.mermaid-cli
           # pkgs.sqlite
           
