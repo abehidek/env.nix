@@ -31,7 +31,6 @@ By using the Nix package manager you can have any environment for development in
 ## Key Features
 
 - Get started with a simple dev environment for your application.
-- Control your shell with one file, from custom environment variables to avaiable packages in your PATH.
 - Have access to any necessary package in [Nix Packages](https://search.nixos.org/packages)
 - Or build your own package using the native Nix functions.
 
@@ -41,18 +40,69 @@ By using the Nix package manager you can have any environment for development in
 
 First things first, it's necessary to have Nix installed in your machine, it currently supports most linux distributions, MacOS and Windows through WSL2. You can see [here the instructions details for installing on each operating system](https://nixos.org/download.html).
 
-Most of the Nix dev environment listed here will use a `flake.nix`, however it's an upcoming feature yet for Nix so to use properly you can either use a `shell.nix` and fetch the `flake.nix`, or you can install direnv in your machine and use the `.envrc` file
+After installing Nix on your machine, [enable the flake and nix command experimental feature](https://nixos.wiki/wiki/Flakes).
+
+And optionally, you can enable direnv and [nix-direnv](https://github.com/nix-community/nix-direnv) in your Nix configuration, this makes it possible to use the dev shell environments on your favorite shell other than bash (fish, zsh etc...).
 
 ### Installing and Running
 
-You can both clone this repository or just extract the raw file string and put in your flake or shell.
+#### With direnv and nix-direnv
 
-```bash
-# Clone this repository
+If you have direnv and [nix-direnv](https://github.com/nix-community/nix-direnv) installed, you can just create a file called `.envrc` in the root folder of your project, and them paste this in:
+
+```sh
+# .envrc
+use flake "github:abehidek/env.nix#nodejs"
+```
+
+And voilà!, you have and nodejs environment ready for you to work on in your favorite shell!
+
+You can select other environments, for example you can have elixir:
+
+```sh
+# .envrc
+use flake "github:abehidek/env.nix#elixir"
+```
+
+#### No direnv and nix-direnv
+
+If you don't want to enable direnv and nix-direnv, you can easily enter in our shell by running:
+
+```
+# Be sure to enable flake and nix-command features on your configuration!!
+# nix develop github:abehidek/env.nix#<desired-environment>
+
+$ nix develop github:abehidek/env.nix#nodejs
+$ nix develop github:abehidek/env.nix#elixir
+```
+
+You will be dropped into a bash shell with the desired environment dependencies!
+
+#### Customize your shell
+
+To add or remove dependencies, you can download this repository and edit the `shell.nix` file or create one and add it into the `flake.nix` outputs, and then to run instead of pointing into this github repository, you point into your local machine `flake.nix`.
+
+```sh
+$ cd ~
 $ git clone https://github.com/abehidek/env.nix
+$ cd <your-project-directory>
+```
 
-# Go into the repository
-$ cd env.nix
+##### With direnv and nix-direnv
+
+Add the `.envrc` file into your project root directory.
+
+```
+#.envrc
+# use flake <flake-path>#<environment>
+use flake ~/env.nix/flake.nix#nodejs
+```
+
+##### No direnv and nix-direnv
+
+```
+# nix develop <flake-folder-path>#<environment>
+$ nix develop ~/env.nix#nodejs
 ```
 
 ## FAQ
@@ -64,8 +114,8 @@ $ cd env.nix
 ## Roadmap
 
 - [x] Elixir dev env.
-- [ ] Nodejs dev env.
-  - [ ] Prisma
+- [x] Nodejs dev env.
+  - [x] Prisma
 - [ ] Go dev env.
 - [ ] Rust dev env.
   - [ ] Tauri
