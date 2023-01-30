@@ -20,6 +20,7 @@
   in rec {
     devShells = forAllSystems (system: {
       nodejs = import ./node/shell.nix { inherit nixpkgs system; };
+      haskell = import ./haskell/shell.nix { inherit nixpkgs system; };
       elixir = import ./elixir/shell.nix { inherit nixpkgs system; };
       rust = import ./rust/shell.nix { inherit nixpkgs system rust-overlay; };
     });
