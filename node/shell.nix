@@ -13,6 +13,7 @@ in pkgs.mkShell {
     node16Pkgs.nodePackages.prisma
     node16Pkgs.yarn
     node16Pkgs.nodePackages.pnpm
+    pkgs.turbo
     pkgs.nodePackages.mermaid-cli
     pkgs.sqlite
 
@@ -24,5 +25,6 @@ in pkgs.mkShell {
     export PRISMA_INTROSPECTION_ENGINE_BINARY="${prisma-engines}/bin/introspection-engine"
     export PRISMA_FMT_BINARY="${prisma-engines}/bin/prisma-fmt"
     export PUPPETEER_EXECUTABLE_PATH="${pkgs.chromium}/bin/chromium"
+    export TURBO_BINARY_PATH="${pkgs.turbo}/bin/turbo"
   '';
 }
